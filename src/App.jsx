@@ -43,12 +43,6 @@ export default function App() {
         {answer === 'yes' && <YesScreen headingRef={headingRef} onBack={() => setAnswer('ask')} />}
       </main>
 
-      {import.meta.env.DEV && (
-        <p className="dev-hint">
-          ⚙️ Dev only: edit <code>src/config.js</code> to fill in your name, city, traits, date idea
-          and contact details.
-        </p>
-      )}
     </>
   )
 }
