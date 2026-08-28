@@ -13,9 +13,7 @@ one you need to touch — the whole page reads from it.
 
 | Field | What it is |
 | --- | --- |
-| `name` | Your first name — shows as "It's me, ___" |
 | `city` | Shows in the stamp at the bottom of the card |
-| `traits` | Three short, funny traits (lowercase, no full stops) |
 | `dateIdea.title` | The date itself, e.g. `Tacos, then the terrible aquarium` |
 | `dateIdea.blurb` | One sentence on why it'll be fun |
 | `dateIdea.when` / `.where` | Optional chips — set to `''` to hide either |
@@ -28,9 +26,6 @@ For WhatsApp the number goes in **country code first, no `+` and no spaces**. Ad
 `?text=...` pre-fills her first message so she only has to hit send.
 
 You can also edit `tickerWords` (the scrolling banner) in the same file.
-
-While `npm run dev` is running, a reminder line at the bottom of the page points at this
-file. It disappears automatically in the production build.
 
 ## 2. Run it
 
