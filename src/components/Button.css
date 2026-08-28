@@ -1,0 +1,120 @@
+/* Shared button skin. The Yes and No buttons deliberately use the SAME
+   size and visual weight — "No" is never shrunk, dimmed or de-emphasised.
+   The only difference is its temperament. */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5em;
+  min-width: 9.5rem;
+  min-height: 3.5rem;
+  padding: 0.75rem 1.7rem;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-weight: 800;
+  font-style: italic;
+  letter-spacing: -0.01em;
+  color: var(--ink);
+  background: var(--paper);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--radius-pill);
+  box-shadow: var(--shadow-btn);
+  cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  transition: transform var(--dur-fast) var(--ease-spring),
+    box-shadow var(--dur-fast) var(--ease-spring), background-color var(--dur-fast) ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+.btn:active {
+  transform: translateY(3px);
+  box-shadow: 0 2px 0 var(--cherry-deep);
+}
+
+/* --- Yes --- */
+
+.btn--yes {
+  color: #fff8f2;
+  background: var(--pink);
+  box-shadow: 0 5px 0 var(--cherry);
+}
+
+.btn--yes:hover {
+  background: #ff4f99;
+}
+
+.btn--yes:active {
+  box-shadow: 0 2px 0 var(--cherry);
+}
+
+.btn__heart {
+  animation: heartbeat 1.9s var(--ease-out) infinite;
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  14% {
+    transform: scale(1.22);
+  }
+  28% {
+    transform: scale(1);
+  }
+  42% {
+    transform: scale(1.14);
+  }
+}
+
+/* --- Secondary / ghost --- */
+
+.btn--ghost {
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: var(--step-0);
+  font-weight: 700;
+  min-height: 2.9rem;
+  min-width: 0;
+  padding: 0.55rem 1.2rem;
+  background: transparent;
+  box-shadow: none;
+  border-color: transparent;
+  color: var(--text-muted);
+  text-decoration: underline;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 4px;
+  text-decoration-color: var(--pink);
+}
+
+.btn--ghost:hover {
+  color: var(--cherry);
+  background: var(--pink-soft);
+  border-color: var(--line);
+  text-decoration-color: transparent;
+}
+
+.btn--ghost:active {
+  transform: translateY(1px);
+  box-shadow: none;
+}
+
+/* Keep the action compact on a normal phone. */
+@media (max-width: 30rem) {
+  .btn {
+    min-width: 7.75rem;
+    min-height: 3.25rem;
+    padding: 0.7rem 1.15rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .btn__heart {
+    animation: none;
+  }
+}

@@ -1,0 +1,143 @@
+.result {
+  text-align: center;
+}
+
+.result__badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 3.75rem;
+  height: 3.75rem;
+  margin-bottom: 1rem;
+  color: var(--ink);
+  background: var(--butter);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--radius-pill);
+  box-shadow: 0 4px 0 var(--cherry);
+  animation: wiggle 2.4s ease-in-out infinite;
+}
+
+.result__badge--calm {
+  background: var(--pink-soft);
+  box-shadow: 0 4px 0 var(--lavender);
+  animation: none;
+}
+
+.result__headline {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: var(--step-4);
+  line-height: 0.92;
+  letter-spacing: -0.035em;
+  color: var(--cherry);
+  font-variation-settings: 'SOFT' 40, 'WONK' 1;
+  text-wrap: balance;
+}
+
+.result__bang {
+  display: inline-block;
+  color: var(--pink);
+}
+
+/* The kind answer is a full sentence, so it needs a calmer size. */
+.result__headline--calm {
+  font-size: var(--step-3);
+  line-height: 1.04;
+  color: var(--ink);
+  max-width: 20ch;
+  margin-inline: auto;
+}
+
+.result__headline:focus-visible {
+  outline: none;
+}
+
+.result__lede {
+  margin: clamp(0.9rem, 0.6rem + 1.2vw, 1.4rem) auto 0;
+  max-width: 40ch;
+  color: var(--text-muted);
+  text-wrap: pretty;
+}
+
+/* --- The plan --- */
+
+.plan {
+  margin: clamp(1.3rem, 0.9rem + 1.6vw, 2rem) auto 0;
+  max-width: 32rem;
+  padding: clamp(1.1rem, 0.8rem + 1.4vw, 1.8rem);
+  background: var(--lavender-soft);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--radius-md);
+  box-shadow: 5px 6px 0 var(--lavender);
+}
+
+.plan__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: var(--step--1);
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--cherry);
+}
+
+.plan__idea {
+  margin-top: 0.5rem;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 800;
+  font-size: var(--step-2);
+  line-height: 1.12;
+  color: var(--ink);
+  text-wrap: balance;
+}
+
+.plan__blurb {
+  margin: 0.5rem auto 0;
+  max-width: 34ch;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  text-wrap: pretty;
+}
+
+.plan__meta {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+/* --- Contact --- */
+
+.result__cta {
+  margin-top: clamp(1.2rem, 0.9rem + 1.4vw, 1.8rem);
+  max-width: 100%;
+  font-size: var(--step-1);
+  text-decoration: none;
+  text-align: center;
+}
+
+.result__cta span {
+  overflow-wrap: anywhere;
+}
+
+.result__fineprint {
+  margin: 1rem auto 0.35rem;
+  max-width: 36ch;
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  text-wrap: pretty;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .result__badge {
+    animation: none;
+  }
+}

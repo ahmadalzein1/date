@@ -1,0 +1,42 @@
+.stage {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: calc(100svh - 3rem);
+  padding: clamp(1.5rem, 1rem + 3vw, 3.5rem) var(--gutter)
+    calc(clamp(1.5rem, 1rem + 3vw, 3.5rem) + env(safe-area-inset-bottom, 0px));
+}
+
+@media (min-width: 40rem) and (max-height: 58rem) {
+  .stage {
+    padding-block: 1.75rem;
+  }
+}
+
+@media (max-height: 46rem) {
+  .stage {
+    padding-block: 0.9rem;
+  }
+}
+
+.dev-hint {
+  position: relative;
+  z-index: 1;
+  margin: 0 auto clamp(1rem, 3vw, 2rem);
+  max-width: 42rem;
+  padding: 0 var(--gutter);
+  color: var(--text-on-bg);
+  font-size: var(--step--1);
+  text-align: center;
+  opacity: 0.85;
+}
+
+.dev-hint code {
+  padding: 0.1em 0.4em;
+  background: var(--pink-soft);
+  border-radius: 6px;
+  color: var(--ink);
+  font-size: 0.95em;
+}

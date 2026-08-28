@@ -1,0 +1,150 @@
+.ask {
+  text-align: center;
+}
+
+.ask__eyebrow {
+  margin-bottom: clamp(0.9rem, 0.5rem + 1.5vw, 1.5rem);
+}
+
+/* Love-letter salutation, sitting just above the question. */
+.ask__salutation {
+  margin-bottom: 0.15em;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 600;
+  font-size: var(--step-1);
+  letter-spacing: 0.01em;
+  color: var(--cherry);
+  transform: rotate(-1.5deg);
+}
+
+.ask__question {
+  position: relative;
+  z-index: 0;
+  margin: 0 auto;
+  max-width: 15ch;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-weight: 900;
+  font-size: var(--step-4);
+  line-height: 0.94;
+  letter-spacing: -0.03em;
+  font-variation-settings: 'SOFT' 40, 'WONK' 1;
+  text-wrap: balance;
+}
+
+.ask__question:focus-visible {
+  outline: none;
+}
+
+/* Hand-drawn marker highlight under "date". */
+.ask__mark {
+  position: relative;
+  color: var(--cherry);
+  white-space: nowrap;
+}
+
+.ask__mark::after {
+  content: '';
+  position: absolute;
+  z-index: -1;
+  left: -3%;
+  right: -3%;
+  bottom: 0.06em;
+  height: 0.26em;
+  background: var(--butter);
+  border-radius: var(--radius-pill);
+  transform: rotate(-1.4deg);
+}
+
+.ask__intro {
+  margin: clamp(0.9rem, 0.6rem + 1.2vw, 1.4rem) auto 0;
+  max-width: 34ch;
+  color: var(--text-muted);
+  font-size: var(--step-0);
+  text-wrap: pretty;
+}
+
+.ask__intro strong {
+  color: var(--cherry);
+  font-weight: 800;
+}
+
+.ask__buttons {
+  margin-top: clamp(0.5rem, 0.2rem + 1vw, 1rem);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: clamp(0.75rem, 0.4rem + 1.5vw, 1.4rem);
+}
+
+.ask__stamp {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: clamp(1.2rem, 0.8rem + 1.5vw, 1.9rem);
+  padding-top: clamp(1rem, 0.7rem + 1vw, 1.4rem);
+  border-top: 2px dashed var(--pink-soft);
+}
+
+.ask__stamp-text {
+  color: var(--text-muted);
+  font-size: var(--step--1);
+  letter-spacing: 0.02em;
+}
+
+/* Short-but-wide viewports (a 720p or 900px-tall laptop) get a tighter
+   vertical rhythm so the whole card fits without scrolling. */
+@media (min-width: 40rem) and (max-height: 58rem) {
+  .ask__eyebrow {
+    margin-bottom: 0.9rem;
+  }
+  .ask__stamp {
+    margin-top: 1.1rem;
+    padding-top: 0.9rem;
+  }
+  .ask__salutation {
+    font-size: var(--step-0);
+    margin-bottom: 0;
+  }
+}
+
+/* Short viewports at ANY width — small phones and landscape phones too. */
+@media (max-height: 46rem) {
+  .ask__question {
+    font-size: var(--step-3);
+  }
+  .ask__salutation {
+    font-size: var(--step-0);
+    margin-bottom: 0;
+  }
+  .ask__eyebrow {
+    margin-bottom: 0.7rem;
+  }
+  .ask__intro {
+    margin-top: 0.7rem;
+  }
+  .ask__stamp {
+    margin-top: 0.9rem;
+    padding-top: 0.8rem;
+  }
+}
+
+/* Very small phones (a 320×568 screen). The question and action have to fit
+  above the fold, so the decorative eyebrow gives up its space. */
+@media (max-width: 26rem) and (max-height: 40rem) {
+  .ask__eyebrow {
+    display: none;
+  }
+  .ask__intro {
+    font-size: var(--step--1);
+  }
+  .ask__stamp {
+    margin-top: 0.8rem;
+    padding-top: 0.7rem;
+  }
+}
+

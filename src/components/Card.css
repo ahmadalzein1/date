@@ -1,0 +1,60 @@
+.card {
+  position: relative;
+  width: min(100%, 46rem);
+  padding: clamp(1.6rem, 1rem + 3.5vw, 3.4rem) var(--gutter) clamp(1.5rem, 1rem + 2.5vw, 2.6rem);
+  background: var(--surface);
+  border: var(--border-w) solid var(--line);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  animation: pop-in var(--dur-slow) var(--ease-spring) both;
+}
+
+/* Washi tape */
+.card__tape {
+  position: absolute;
+  top: -14px;
+  width: clamp(64px, 14vw, 108px);
+  height: 30px;
+  border-radius: 2px;
+  opacity: 0.9;
+  box-shadow: 0 2px 6px rgba(43, 27, 46, 0.14);
+  /* candy stripes */
+  background-image: repeating-linear-gradient(
+    -45deg,
+    rgba(255, 255, 255, 0.55) 0 6px,
+    rgba(255, 255, 255, 0) 6px 12px
+  );
+}
+
+.card__tape--left {
+  left: clamp(-8px, 2vw, 22px);
+  background-color: var(--pink-soft);
+  transform: rotate(-6deg);
+}
+
+.card__tape--right {
+  right: clamp(-8px, 2vw, 22px);
+  background-color: var(--lavender-soft);
+  transform: rotate(5deg);
+}
+
+@media (min-width: 40rem) and (max-height: 58rem) {
+  .card {
+    padding-top: 2.1rem;
+    padding-bottom: 1.7rem;
+  }
+}
+
+@media (max-height: 46rem) {
+  .card {
+    padding-top: 1.7rem;
+    padding-bottom: 1.3rem;
+  }
+}
+
+@media (max-width: 30rem) {
+  .card {
+    border-radius: var(--radius-md);
+    box-shadow: 6px 7px 0 var(--cherry);
+  }
+}

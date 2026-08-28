@@ -1,0 +1,42 @@
+.decor {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.decor__sticker {
+  position: absolute;
+  font-size: calc(clamp(1.5rem, 1rem + 2.4vw, 3rem) * var(--scale, 1));
+  line-height: 1;
+  transform: rotate(var(--tilt, 0deg));
+  filter: drop-shadow(3px 4px 0 rgba(43, 27, 46, 0.16));
+  animation: float-y var(--drift, 8s) ease-in-out infinite;
+}
+
+.decor__glyph {
+  position: absolute;
+  opacity: 0.55;
+  animation: twinkle 4.5s ease-in-out infinite;
+}
+
+/* On small screens keep only the outer stickers so nothing crowds the card. */
+@media (max-width: 46rem) {
+  .decor__sticker {
+    opacity: 0.75;
+  }
+  .decor__glyph:nth-child(even) {
+    display: none;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .decor__sticker,
+  .decor__glyph {
+    animation: none;
+  }
+  .decor__glyph {
+    opacity: 0.4;
+  }
+}

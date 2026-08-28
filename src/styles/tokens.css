@@ -1,0 +1,89 @@
+/* ==================================================================
+   Design tokens — "Cherry Cordial"
+   Cream paper, cherry ink, hot pink, lavender, butter yellow.
+   ================================================================== */
+
+:root {
+  /* --- Core palette --- */
+  --cream: #fff7f0;
+  --cream-deep: #ffece0;
+  --paper: #fffdfb;
+  --ink: #2b1b2e;
+  --ink-soft: #6b566f;
+
+  --cherry: #d91f45;
+  --cherry-deep: #ab1436;
+  --pink: #ff5fa2;
+  --pink-soft: #ffd6e7;
+  --lavender: #b49cff;
+  --lavender-soft: #ece5ff;
+  --butter: #ffd36e;
+  --mint: #8fe3c8;
+
+  /* --- Semantic --- */
+  --bg: var(--cream);
+  --surface: var(--paper);
+  --text: var(--ink);
+  --text-muted: var(--ink-soft);
+  /* For the few bits of text that sit directly on the page field
+     rather than on a card. */
+  --text-on-bg: var(--ink-soft);
+
+  /* Page field: dotted paper grain + three soft colour washes. */
+  --dot: rgba(217, 31, 69, 0.14);
+  --wash-pink: rgba(255, 95, 162, 0.22);
+  --wash-lavender: rgba(180, 156, 255, 0.24);
+  --wash-butter: rgba(255, 211, 110, 0.28);
+  --line: var(--ink);
+  --accent: var(--cherry);
+  --focus: var(--lavender);
+
+  /* --- Type --- */
+  --font-display: 'Fraunces', 'Iowan Old Style', 'Palatino Linotype', Georgia, serif;
+  --font-body: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto,
+    'Helvetica Neue', Arial, sans-serif;
+
+  /* Fluid type scale */
+  --step--1: clamp(0.8rem, 0.76rem + 0.2vw, 0.9rem);
+  --step-0: clamp(0.95rem, 0.9rem + 0.25vw, 1.075rem);
+  --step-1: clamp(1.1rem, 1rem + 0.5vw, 1.35rem);
+  --step-2: clamp(1.35rem, 1.15rem + 1vw, 1.85rem);
+  --step-3: clamp(2rem, 1.4rem + 3.2vw, 4.1rem);
+  --step-4: clamp(2.6rem, 1.6rem + 5vw, 5.4rem);
+
+  /* --- Shape --- */
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-pill: 999px;
+  --border-w: 2.5px;
+
+  /* --- Elevation (hard offset, sticker-book style) --- */
+  --shadow-card: 10px 12px 0 var(--cherry);
+  --shadow-btn: 0 5px 0 var(--cherry-deep);
+  --shadow-chip: 0 3px 0 rgba(43, 27, 46, 0.18);
+
+  /* --- Motion --- */
+  --ease-spring: cubic-bezier(0.22, 1.2, 0.36, 1);
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-fast: 140ms;
+  --dur-mid: 320ms;
+  --dur-slow: 620ms;
+
+  /* --- Space --- */
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.25rem);
+}
+
+/* Dark mode keeps the card as cream paper — that's the whole conceit — and
+   turns the field behind it into a night sky, with the washes pushed harder
+   so they still read as colour rather than mud. */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #241a24;
+    --text-on-bg: #f0dfe9;
+    --dot: rgba(255, 214, 231, 0.1);
+    --wash-pink: rgba(255, 95, 162, 0.3);
+    --wash-lavender: rgba(180, 156, 255, 0.32);
+    --wash-butter: rgba(255, 211, 110, 0.16);
+  }
+}
